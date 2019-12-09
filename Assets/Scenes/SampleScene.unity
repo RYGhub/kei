@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c10f360a71427444bf500e430c3f52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://localhost:44445/api/kei
+  url: https://ryg.steffo.eu/api/kei
   kpid: 
 --- !u!1 &1531870066
 GameObject:

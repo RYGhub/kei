@@ -15,8 +15,9 @@ public class KeiResponse {
 public class Network : MonoBehaviour
 {
     // USE HTTPS IN ANDROID OR IT WON'T WORK
-    public string url = "http://192.168.1.17:44445/api/kei";
+    public string url = "https://ryg.steffo.eu/api/kei";
     public string kpid;
+    public string convid;
 
     private Sender sender;
 
@@ -30,12 +31,14 @@ public class Network : MonoBehaviour
             kpid = System.Guid.NewGuid().ToString();
             PlayerPrefs.SetString("kpid", kpid);
         }
+        convid = kpid = System.Guid.NewGuid().ToString();
         StartCoroutine(PostRequest("", "true"));
     }
 
     public IEnumerator PostRequest(string message, string first) {
         WWWForm form = new WWWForm();
         form.AddField("kpid", kpid);
+        form.AddField("convid", convid);
         form.AddField("message", message);
         form.AddField("first", first);
 
