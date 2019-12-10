@@ -1,0 +1,16 @@
+{
+"companyName": "Kuno Labs",
+"productName": "Kei",
+"productVersion": "23.12.2",
+"dataUrl": "595ae06cf18988b84b12b9899a624552.unityweb",
+"wasmCodeUrl": "d47d8e2c85d1a13c09e75e92a4cd0ca8.unityweb",
+"wasmFrameworkUrl": "94e2762c7bb08db76417ef58499f5625.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.0b6"
+}
