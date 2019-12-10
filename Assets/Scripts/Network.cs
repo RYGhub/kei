@@ -18,6 +18,7 @@ public class Network : MonoBehaviour
     public string url = "https://ryg.steffo.eu/api/kei";
     public string kpid;
     public string convid;
+    public string previous = "";
 
     private Sender sender;
 
@@ -31,7 +32,7 @@ public class Network : MonoBehaviour
             kpid = System.Guid.NewGuid().ToString();
             PlayerPrefs.SetString("kpid", kpid);
         }
-        convid = kpid = System.Guid.NewGuid().ToString();
+        convid = System.Guid.NewGuid().ToString();
         StartCoroutine(PostRequest("", "true"));
     }
 
@@ -41,6 +42,7 @@ public class Network : MonoBehaviour
         form.AddField("convid", convid);
         form.AddField("message", message);
         form.AddField("first", first);
+        form.AddField("previous", previous);
 
         UnityWebRequest request = UnityWebRequest.Post(url, form);
         yield return request.SendWebRequest();
@@ -51,9 +53,10 @@ public class Network : MonoBehaviour
         else {
             try {
                 KeiResponse kr = JsonUtility.FromJson<KeiResponse>(request.downloadHandler.text);
+                previous = kr.text;
                 sender.Change(kr.text, kr.emotion);
             }
-            catch (System.ArgumentException e) {
+            catch (System.ArgumentException) {
                 Debug.LogError(request.downloadHandler.text);
             }
         }
