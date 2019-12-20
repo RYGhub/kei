@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style>
-      body {
-        background-color: black;
-      }
-    </style>
-    <title>Kei</title>
-    <script src="Build/9b952195ab79ef94f0feaae8cbb8d8ac.js"></script>
-    <script>
-      UnityLoader.instantiate("unityContainer", "Build/8bc04d0c5fddea9b7f70edca255942d1.json");
-    </script>
-  </head>
-  <body>
-    <div id="unityContainer" style="width: 960px; height: 600px; margin: auto"></div>
-  </body>
+    <link rel="icon" href="./favicon.png">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		
+		body {
+			background-color: black;
+		}
+
+        #parent-container {
+            width: 98%;
+            height: 98%;
+            margin: auto;
+            display: block;
+        }
+	</style>
+	<title>Kei</title>
+	<script src="Build/9b952195ab79ef94f0feaae8cbb8d8ac.js"></script>
+	<script>
+		UnityLoader.instantiate("unityContainer", "Build/8bc04d0c5fddea9b7f70edca255942d1.json");
+	</script>
+</head>
+<body>
+    <div id="parent-container">
+        <div id="unityContainer"></div>
+    </div>
+</body>
 </html>
