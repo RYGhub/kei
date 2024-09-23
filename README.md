@@ -1,6 +1,12 @@
-# keiclient
+<div align="center">
 
-A mysterious Unity game
+![](Assets/Icon.png)
+
+# Kei
+
+Character-based interface to Royalnet 5
+
+</div>
 
 ## Available emotions
 
